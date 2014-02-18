@@ -1,6 +1,6 @@
 assert = require 'assert'
 chai = require('chai')
-forecast = require '../lib/forecastjs.js'
+forecast = require '../lib/forecast.js'
 
 chai.should()
 
@@ -16,4 +16,4 @@ describe 'forecastjs', ->
 
   it 'asdf', ->
     s1 = {asd: 123}
-    s1.should.be.equal {asd: 123}
+    s1.should.equal s1

@@ -1,0 +1,1 @@
+A wrapper for getting weather data from multiple sources.
