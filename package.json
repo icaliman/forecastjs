@@ -1,6 +1,6 @@
 {
   "name": "forecastjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A wrapper for getting weather data from multiple sources.",
   "homepage": "https://github.com/icaliman/forecastjs",
   "main": "lib/forecast.js",
