@@ -4,7 +4,10 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          'lib/forecast.js': ['src/*.coffee']
+          'lib/forecast.js': ['src/forecastjs.coffee']
+          'lib/meteo.js': 'src/meteo.coffee'
+          'lib/adapter.js': 'src/adapter.coffee'
+          'lib/data-collector.js': 'src/data-collector.coffee'
     mochaTest:
       options:
         reporter: 'nyan'

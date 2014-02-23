@@ -1,7 +1,7 @@
 {
   "name": "forecastjs",
   "version": "0.0.2",
-  "description": "A wrapper for getting weather data from multiple sources.",
+  "description": "Weather data collector.",
   "homepage": "https://github.com/icaliman/forecastjs",
   "main": "lib/forecast.js",
   "author": "John Caliman",
@@ -37,6 +37,7 @@
     "chai": "~1.9.0"
   },
   "dependencies": {
-    "yaml-js": "0.0.8"
+    "cron": "~1.0.3",
+    "geomodeljs": "0.0.1"
   }
 }
