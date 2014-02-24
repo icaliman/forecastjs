@@ -39,17 +39,17 @@ Cerinte:
 
 2. Trebuie definit Meteo in <code>db/schema.coffee</code>
 
-    Meteo = describe 'Meteo', ->
-      property 'date', Date, {index: true}
-      property 'geogroup', {index: true}
-      property 'temperature', Number
-      property 'humidity', Number, {dataType: 'float'}
-      property 'pressure', Number, {dataType: 'float'}
-      property 'wind_speed', Number, {dataType: 'float'}
-      property 'wind_degrees', Number, {dataType: 'float'}
-      property 'condition', String
-      property 'sky', Number, {dataType: 'float'}
-      property 'updated', Date, 'default': -> new Date
+        Meteo = describe 'Meteo', ->
+          property 'date', Date, {index: true}
+          property 'geogroup', {index: true}
+          property 'temperature', Number
+          property 'humidity', Number, {dataType: 'float'}
+          property 'pressure', Number, {dataType: 'float'}
+          property 'wind_speed', Number, {dataType: 'float'}
+          property 'wind_degrees', Number, {dataType: 'float'}
+          property 'condition', String
+          property 'sky', Number, {dataType: 'float'}
+          property 'updated', Date, 'default': -> new Date
 
 
 3. Trebuie creat fisierul de configurare <code>config/forecastjs.coffee</code>.
