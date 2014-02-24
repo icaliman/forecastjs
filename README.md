@@ -51,21 +51,21 @@ Cerinte:
 
 3. Trebuie creat fisierul de configurare <code>config/forecastjs.coffee</code>.
 
-    module.exports =
-      development:
-        services: [
-          adapter: 'fo-openweathermap'              # numele modulului de pe npmjs.org
-          defaults:                                 # atribute adaugate in url-ul API-ului de unde se preiau date meteo
-            APPID: 'xxxxx'
-            units: 'metric'
-          update:                                   # indica cand sa se faca update la datele meteo
-            cron: '0 */20 * * * *'                  # pattern pentru modulul cron(https://www.npmjs.org/package/cron)
-            interval: 8                             # intervalul dintre doua request-uri la serviciu, default = 10
-        ]
-        timezone: 'Europe/Chisinau'                 # folosit de adaptere pentru modulul cron
-        locations:                                  # lista de locatii pentru
-          adapter: 'memory'                         # file || memory (|| db?)
-          source: ['e118e', 'e10ff']                # lista || calea catre fisierul JSON cu locatii (|| numele colectiei din DB?)
+        module.exports =
+          development:
+            services: [
+              adapter: 'fo-openweathermap'              # numele modulului de pe npmjs.org
+              defaults:                                 # atribute adaugate in url-ul API-ului de unde se preiau date meteo
+                APPID: 'xxxxx'
+                units: 'metric'
+              update:                                   # indica cand sa se faca update la datele meteo
+                cron: '0 */20 * * * *'                  # pattern pentru modulul cron(https://www.npmjs.org/package/cron)
+                interval: 8                             # intervalul dintre doua request-uri la serviciu, default = 10
+            ]
+            timezone: 'Europe/Chisinau'                 # folosit de adaptere pentru modulul cron
+            locations:                                  # lista de locatii pentru
+              adapter: 'memory'                         # file || memory (|| db?)
+              source: ['e118e', 'e10ff']                # lista || calea catre fisierul JSON cu locatii (|| numele colectiei din DB?)
 
-      test: ...
-      production: ...
+          test: ...
+          production: ...
