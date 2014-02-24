@@ -34,7 +34,9 @@ Preluarea datelor meteo din BD (metoda "getDailyForecast" este adaugata de Forec
 In fisierul de configurareLista de locatii pentru care se preia date meteo
 
 Cerinte:
+
 1. Poate fi folosit doar in CompoundJS + JugglingDB
+
 2. Trebuie definit Meteo in <code>db/schema.coffee</code>
 
     Meteo = describe 'Meteo', ->
@@ -48,6 +50,7 @@ Cerinte:
       property 'condition', String
       property 'sky', Number, {dataType: 'float'}
       property 'updated', Date, 'default': -> new Date
+
 
 3. Trebuie creat fisierul de configurare <code>config/forecastjs.coffee</code>.
 
