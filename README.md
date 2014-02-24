@@ -51,7 +51,6 @@ Cerinte:
           property 'sky', Number, {dataType: 'float'}
           property 'updated', Date, 'default': -> new Date
 
-
 3. Trebuie creat fisierul de configurare <code>config/forecastjs.coffee</code>.
 
         module.exports =

@@ -1,8 +1,8 @@
 
 exports.init = (service, conf, geogroups, Meteo) ->
 
-  console.log "Init adapter", service.adapter
-  console.log "Geogroups: ", geogroups
+  console.log ">>>>> Init adapter", service.adapter
+#  console.log "Geogroups: ", geogroups
 
   try
     Adapter = require(service.adapter)
