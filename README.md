@@ -51,6 +51,7 @@ Cerinte:
 
 3. Trebuie creat fisierul de configurare <code>config/forecastjs.coffee</code>
 
+
     module.exports =
       development:
         services: [
