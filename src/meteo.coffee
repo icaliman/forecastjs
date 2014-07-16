@@ -19,7 +19,8 @@ exports.init = (conf, Meteo) ->
 
   Meteo.getDailyForecast = (geogroup, start_date, day_count, cb) ->
 
-    start_date.setTime(start_date.getTime() - start_date.getTime() % 86400000) # 86400000 = 24 * 60 * 60 * 1000
+#    start_date.setTime(start_date.getTime() - start_date.getTime() % 86400000) # 86400000 = 24 * 60 * 60 * 1000
+    start_date.setHours(0, 0, 0, 0)
 
     end_date = new Date(start_date.getTime() + day_count * 86400000 - 1)
 
@@ -30,20 +31,8 @@ exports.init = (conf, Meteo) ->
           between: [start_date, end_date]
       order: 'date'
 
-
-#    console.log JSON.stringify query, null, 4
-
     Meteo.all query, (err, rows) ->
       return cb err if err
-
-#      data = [{
-#        date: new Date()
-#        hours: [
-#          2: {},
-#          5: {},
-#          8: {}
-#        ]
-#      }]
 
       data = []
 
