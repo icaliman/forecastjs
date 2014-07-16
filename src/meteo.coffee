@@ -21,7 +21,7 @@ exports.init = (conf, Meteo) ->
 
     start_date.setHours(0,0,0,0)
 
-    end_date = new Date(start_date.getTime() + day_count * 86400000)
+    end_date = new Date(start_date.getTime() + day_count * 86400000 - 1)
 
 #    console.log start_date
 #    console.log end_date
