@@ -1,7 +1,7 @@
 {
   "name": "forecastjs",
   "version": "0.0.6",
-  "description": "Weather data collector.",
+  "description": "Weather data collector for CompoundJS.",
   "homepage": "https://github.com/icaliman/forecastjs",
   "main": "lib/forecast.js",
   "author": "John Caliman",

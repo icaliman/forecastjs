@@ -49,21 +49,25 @@ exports.init = (conf, Meteo) ->
 #        ]
 #      }]
 
-      data = []
+#      data = []
+      json = {}
 
       for row in rows
-        timeDiff = row.date.getTime() - start_date.getTime()
-        d = Math.floor(timeDiff / 86400000) # 86400000 = 24 * 60 * 60 * 1000
-#        console.log d, row
+#        timeDiff = row.date.getTime() - start_date.getTime()
+#        d = Math.floor(timeDiff / 86400000) # 86400000 = 24 * 60 * 60 * 1000
+##        console.log d, row
+#
+#        data[d] = data[d] || {hours:[]} #{date: new Date(start_date.getTime() + d*3600000) , hours: []}
+#
+#        #TODO: date.getHours() returneaza ora in dependenta de timezone, dar timezone pe server poate sa nu fie la fel ca pe client.
+#        #TODO: FIX: process.env.TZ = 'Europe/Chisinau'
+#
+#        data[d].hours[row.date.getHours()] = row
 
-        data[d] = data[d] || {hours:[]} #{date: new Date(start_date.getTime() + d*3600000) , hours: []}
+        json[row.date.getTime()] = row
 
-        #TODO: date.getHours() returneaza ora in dependenta de timezone, dar timezone pe server poate sa nu fie la fel ca pe client.
-        #TODO: FIX: process.env.TZ = 'Europe/Chisinau'
-
-        data[d].hours[row.date.getHours()] = row
-
-      cb(null, data)
+#      cb(null, data)
+      cb(null, json)
 
 #  date = new Date()
 #  date.setDate(new Date().getDate()-1)

@@ -23,4 +23,4 @@ exports.init = (service, conf, geogroups, Meteo) ->
       job = new CronJob service.update.cron, ( -> dataCollector.start()), null, false, conf.timezone
       job.start()
     catch e
-      console.error ">>>>> cron pattern not valid: " + e
+      console.error ">>>>> cron pattern is not valid: " + e
