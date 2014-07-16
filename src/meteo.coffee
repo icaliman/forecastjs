@@ -55,12 +55,19 @@ exports.init = (conf, Meteo) ->
         d = Math.floor(timeDiff / 86400000) # 86400000 = 24 * 60 * 60 * 1000
 #        console.log d, row
 
-        data[d] = data[d] || {hours:[]} #{date: new Date(start_date.getTime() + d*3600000) , hours: []}
+        data[d] = data[d] || {
+          hours: []
+          date: new Date(start_date.getTime() + d*86400000)
+          temp_min: 10000,
+          temp_max: -10000
+        } #{date: new Date(start_date.getTime() + d*86400000) , hours: []}
 
         #TODO: date.getHours() returneaza ora in dependenta de timezone, dar timezone pe server poate sa nu fie la fel ca pe client.
         #TODO: FIX: process.env.TZ = 'Europe/Chisinau'
 
         data[d].hours[row.date.getHours()] = row
+        data[d].temp_min = row.temperature if row.temperature < data[d].temp_min
+        data[d].temp_max = row.temperature if row.temperature > data[d].temp_max
 
       cb null, data
 
