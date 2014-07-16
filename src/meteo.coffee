@@ -56,10 +56,10 @@ exports.init = (conf, Meteo) ->
 #        console.log d, row
 
         data[d] = data[d] || {
-          hours: []
           date: new Date(start_date.getTime() + d*86400000)
           temp_min: 10000,
           temp_max: -10000
+          hours: []
         } #{date: new Date(start_date.getTime() + d*86400000) , hours: []}
 
         #TODO: date.getHours() returneaza ora in dependenta de timezone, dar timezone pe server poate sa nu fie la fel ca pe client.
