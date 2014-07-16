@@ -50,9 +50,8 @@ exports.init = (conf, Meteo) ->
 #      }]
 
 #      data = []
-      json = {}
 
-      for row in rows
+#      for row in rows
 #        timeDiff = row.date.getTime() - start_date.getTime()
 #        d = Math.floor(timeDiff / 86400000) # 86400000 = 24 * 60 * 60 * 1000
 ##        console.log d, row
@@ -64,10 +63,7 @@ exports.init = (conf, Meteo) ->
 #
 #        data[d].hours[row.date.getHours()] = row
 
-        json[row.date.getTime()] = row
-
-#      cb(null, data)
-      cb(null, json)
+      cb null, rows
 
 #  date = new Date()
 #  date.setDate(new Date().getDate()-1)
