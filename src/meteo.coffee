@@ -20,9 +20,7 @@ exports.init = (conf, Meteo) ->
   Meteo.getDailyForecast = (geogroup, start_date, day_count, cb) ->
 
 #    start_date.setTime(start_date.getTime() - start_date.getTime() % 86400000) # 86400000 = 24 * 60 * 60 * 1000
-    console.log start_date
     start_date.setHours(0, 0, 0, 0)
-    console.log start_date
 
     end_date = new Date(start_date.getTime() + day_count * 86400000 - 1)
 
