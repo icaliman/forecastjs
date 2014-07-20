@@ -15,7 +15,7 @@ class ForecastJS
 
     conf = conf[app.get('env')]
 
-    compound.on 'models', (models) ->
+    compound.on 'models', (models) =>
       if models[conf.meteo.db]
         @initMeteoModel(conf, models[conf.meteo.db])
 
