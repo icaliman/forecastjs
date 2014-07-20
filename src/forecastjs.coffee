@@ -40,7 +40,7 @@ class ForecastJS
 
 
   initAdapter: (service, conf, geogroups, Meteo) ->
-    adapters.push(new Adapter(service, conf, geogroups, Meteo))
+    @adapters.push(new Adapter(service, conf, geogroups, Meteo))
 
 
   getGeogroupsFromFile: (path) ->
