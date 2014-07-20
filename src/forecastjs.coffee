@@ -9,8 +9,6 @@ exports.init = (compound) ->
 
   conf = conf[app.get('env')]
 
-  console.log JSON.stringify(conf, null, 4)
-
   compound.on 'models', (models) ->
     if models[conf.meteo.db]
       initMeteoModel(conf, models[conf.meteo.db])
