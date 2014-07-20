@@ -15,7 +15,7 @@ module.exports = class Adapter
     adapter.defaults service.defaults
 
     if service.update
-      console.log ">>>>> Start Cron Job: ", service.adapter
+      console.log ">>>>> Init Cron Job: ", service.adapter
       CronJob = require('cron').CronJob
 
       DataCollector = require('./data-collector')
@@ -28,5 +28,4 @@ module.exports = class Adapter
         console.error ">>>>> Cron pattern is not valid: " + e
 
   startNow: ->
-    console.log ">>>>>>>>>>>>>>>>>>>>>>>> start now"
     @dataCollector.start()
