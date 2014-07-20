@@ -61,7 +61,8 @@ class ForecastJS
 
 
   updateNow: ->
-    console.log "Update Now"
+    for adapter in @adapters
+      adapter.startNow()
 
 
 module.exports = new ForecastJS()
